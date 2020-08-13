@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
         this.loadUsers();
     }
 
-    eliminar(users) {
+    delete(users) {
         //elimna archivo de firebase
         this.storage.ref(users.filename).delete();
         //delete document
@@ -64,6 +64,39 @@ export class AppComponent implements OnInit {
             this.toastr.error('Usuario Eliminado');
             this.loadUsers();
         })
+
+    }
+
+    edit(users) {
+        console.log(users.nombre)
+        console.log(users.image)
+        this.userForm.patchValue({
+            firstName: users.nombre, 
+            lastName: users.apellido,
+            access: users.access,
+            imagePre2: {
+                src:users.image
+                
+                
+            } //users.image
+            
+            /*
+            this.form.patchValue({
+                name: 'Todd Motto',
+                event: {
+                    title: 'AngularCamp 2016',
+                    location: 'Barcelona, Spain'
+                }
+            });
+            */
+
+
+            // formControlName2: myValue2 (can be omitted)
+          });
+         // this.userForm.controls
+          
+    //this.userForm.get('firstname').setValue('users.nombre');
+        
 
     }
 
@@ -87,7 +120,7 @@ export class AppComponent implements OnInit {
         // const id = Math.random().toString(36).substring(2);
         const data = e.target.files[0];
         this.file = data
-        console.log(data.name)
+        console.log('aa',data.name)
         const extension = data.name.split('.')[1].toLowerCase()
         this.id = `uploads/${uuidv4()}.${extension}`
         console.log(this.id)
@@ -162,6 +195,7 @@ export class AppComponent implements OnInit {
 
     selectFile(event) {
         if (!event.target.files[0] || event.target.files[0].length == 0) {
+            console.log(event.target.files[0])
 
             this.toastr.error('Debes seleccionar una imagen');
             this.url = "";
