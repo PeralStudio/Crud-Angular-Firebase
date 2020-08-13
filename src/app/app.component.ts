@@ -68,6 +68,11 @@ export class AppComponent implements OnInit {
     }
 
     edit(users) {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });this.toastr.error(`Editando Usuario: ${users.nombre}, ${users.apellido}`);
         console.log(users.nombre)
         console.log(users.image)
         this.userForm.patchValue({
