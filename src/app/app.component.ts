@@ -72,19 +72,20 @@ export class AppComponent implements OnInit {
             top: 0,
             left: 0,
             behavior: 'smooth'
-          });this.toastr.error(`Editando Usuario: ${users.nombre}, ${users.apellido}`);
+        });
+        this.toastr.error(`Editando Usuario: ${users.nombre}, ${users.apellido}`);
         console.log(users.nombre)
         console.log(users.image)
         this.userForm.patchValue({
-            firstName: users.nombre, 
+            firstName: users.nombre,
             lastName: users.apellido,
             access: users.access,
             imagePre2: {
-                src:users.image
-                
-                
+                src: users.image
+
+
             } //users.image
-            
+
             /*
             this.form.patchValue({
                 name: 'Todd Motto',
@@ -97,11 +98,11 @@ export class AppComponent implements OnInit {
 
 
             // formControlName2: myValue2 (can be omitted)
-          });
-         // this.userForm.controls
-          
-    //this.userForm.get('firstname').setValue('users.nombre');
-        
+        });
+        // this.userForm.controls
+
+        //this.userForm.get('firstname').setValue('users.nombre');
+
 
     }
 
@@ -125,7 +126,7 @@ export class AppComponent implements OnInit {
         // const id = Math.random().toString(36).substring(2);
         const data = e.target.files[0];
         this.file = data
-        console.log('aa',data.name)
+        console.log('aa', data.name)
         const extension = data.name.split('.')[1].toLowerCase()
         this.id = `uploads/${uuidv4()}.${extension}`
         console.log(this.id)
