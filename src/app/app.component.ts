@@ -69,7 +69,18 @@ export class AppComponent implements OnInit {
 
     //CONSEGUIR EDITAR
 
-
+    /* public editCat(documentId) {
+        const editSubscribe = this.firestoreService.getCat(documentId).subscribe((cat) => {
+          this.currentStatus = 2;
+          this.documentId = documentId;
+          this.newCatForm.setValue({
+            id: documentId,
+            nombre: cat.payload.data()['nombre'],
+            url: cat.payload.data()['url']
+          });
+          editSubscribe.unsubscribe();
+        });
+      } */
 
 
     onUpload(e) {
