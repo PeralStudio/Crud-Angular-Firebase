@@ -1,0 +1,74 @@
+<div>
+    <form class="form" [formGroup]="userForm" (ngSubmit)="addNewUser()" #form="ngForm">
+
+        <div class="image-upload" style="text-align:center">
+            <div [innerHtml]='msg' *ngIf="msg"></div>
+            <div><img id="imgPreview" [src]="url" *ngIf="url">
+            </div>
+            <p>
+                <input id="enterFile" type="file" formControlName="imagePost" (change)="selectFile($event)"
+                    (change)=onUpload($event)>
+            </p>
+        </div>
+
+        <input class="firstName" type="text" formControlName="firstName" placeholder="Nombre"><br>
+        <input class="lastName" type="text" formControlName="lastName" placeholder="Apellidos"><br>
+
+        <select id="select" formControlName="access">
+            <option value="" disabled selected>¿Acceso?</option>
+            <option value="yes">Con acceso</option>
+            <option value="no">Sin Acceso</option>
+        </select>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                [style.width]="(uploadPercent) + '%'"></div>
+        </div>
+        <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary ">
+            Guardar
+        </button>
+        <!--<button type="reset" class="btn btn-primary ">Reset</button>
+    <button class="btn btn-primary">
+        Limpiar
+    </button>-->
+    </form>
+    
+    <div>
+        <div class=" cajas row">
+            <div class="caja1 col md5">
+                <h3>Con acceso</h3>
+                <div *ngFor="let user of userListAccess('yes')">
+                    <img id="userImage" src="{{user.image}}" /><br>
+                    <span>Nombre: {{user.nombre}}</span><br>
+                    <span>Apellidos: {{user.apellido}}</span><br>
+                    <button type="submit" class="btn btn-danger" (click)="eliminar(user)">
+                        Borrar
+                    </button>
+                    <button type="submit" disabled="true" class="btn btn-success" (click)="edit(user)">
+                        Editar
+                    </button>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="caja2 col md5">
+                <h3>Sin acceso</h3>
+                <div *ngFor="let user of userListAccess('no')">
+                    <img id="userImage" src="{{user.image}}" /><br>
+                    <span>Nombre: {{user.nombre}}</span><br>
+                    <span>Apellidos: {{user.apellido}}</span><br>
+                    <div>
+                        <button type="submit" class="btn btn-danger" (click)="eliminar(user)">
+                            Borrar
+                        </button>
+                        <button type="submit" disabled="true" class="btn btn-success" (click)="editar(user)">
+                            Editar
+                        </button>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div><span>creado por Alberto Peral</span></div>
+    </footer>

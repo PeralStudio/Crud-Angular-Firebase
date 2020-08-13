@@ -1,0 +1,82 @@
+.form {
+    background-color: darkslategray;
+    padding: 50px;
+    text-align: center;
+    color: white;
+    word-break: break-all;
+}
+
+.d {
+    background-color: red;
+}
+
+.cajas {
+    margin-top: 50px;
+    margin-left: 0px;
+    text-align: center;
+    width: 100%;
+    min-height: calc(100vh - 60px - 426px - 50px);
+}
+
+.caja1, .caja2 {
+    background-color: white;
+    display: table-column-group;
+    color: black;
+}
+
+#userImage {
+    height: 100px;
+    width: 150px;
+}
+
+input, button {
+    margin: 20px;
+}
+
+.firstName, .lastName {
+    margin: 10px;
+}
+
+#enterFile {
+    width: 200px;
+    font-size: 10px;
+}
+
+h3 {
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: darkslategray;
+    border-bottom: solid darkslategray 1px;
+}
+
+#select {
+    margin: 15px;
+}
+
+.progress {
+    background-color: transparent;
+}
+
+#imgPreview {
+    width: 150px;
+    border: solid grey 1px;
+}
+
+footer {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: darkslategray;
+}
+
+footer > div  {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.linkFooter  {
+    color:black;
+}
