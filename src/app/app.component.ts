@@ -67,11 +67,11 @@ export class AppComponent implements OnInit {
 
     }
 
-   //CONSEGUIR EDITAR
+    //CONSEGUIR EDITAR
 
 
 
-   
+
     onUpload(e) {
         // const id = Math.random().toString(36).substring(2);
         const data = e.target.files[0];
