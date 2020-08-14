@@ -70,7 +70,8 @@ export class AppComponent implements OnInit {
         this.storage.ref(users.filename).delete();
         //delete document Database
         this.db.doc(`/users/${users.id}`).delete().then(e => {
-            this.toastr.error(`Usuario: ${users.nombre}, ${users.apellido} Eliminado`);
+            this.toastr.error(`${users.nombre}, ${users.apellido} `, "Usuario Eliminado:");
+            
         })
 
     }
@@ -85,7 +86,7 @@ export class AppComponent implements OnInit {
             left: 0,
             behavior: 'smooth'
         });
-        this.toastr.info(`Editando Usuario: ${users.nombre}, ${users.apellido}`);
+        this.toastr.info(`${users.nombre}, ${users.apellido}`, "Editando Usuario:");
         console.log(users.nombre, users.apellido)
         console.log(users.image)
         this.userForm.patchValue({
