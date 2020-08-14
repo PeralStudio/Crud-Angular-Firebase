@@ -61,7 +61,7 @@ export class AppComponent implements OnInit {
         this.storage.ref(users.filename).delete();
         //delete document
         this.db.doc(`/users/${users.id}`).delete().then(e => {
-            this.toastr.error('Usuario Eliminado');
+            this.toastr.error(`Usuario: ${users.nombre}, ${users.apellido} Eliminado`);
             this.loadUsers();
         })
 
@@ -82,45 +82,9 @@ export class AppComponent implements OnInit {
             access: users.access,
             imagePre2: {
                 src: users.image
-
-
-            } //users.image
-
-            /*
-            this.form.patchValue({
-                name: 'Todd Motto',
-                event: {
-                    title: 'AngularCamp 2016',
-                    location: 'Barcelona, Spain'
-                }
-            });
-            */
-
-
-            // formControlName2: myValue2 (can be omitted)
+            }
         });
-        // this.userForm.controls
-
-        //this.userForm.get('firstname').setValue('users.nombre');
-
-
     }
-
-    //CONSEGUIR EDITAR
-
-    /* public editCat(documentId) {
-        const editSubscribe = this.firestoreService.getCat(documentId).subscribe((cat) => {
-          this.currentStatus = 2;
-          this.documentId = documentId;
-          this.newCatForm.setValue({
-            id: documentId,
-            nombre: cat.payload.data()['nombre'],
-            url: cat.payload.data()['url']
-          });
-          editSubscribe.unsubscribe();
-        });
-      } */
-
 
     onUpload(e) {
         // const id = Math.random().toString(36).substring(2);
@@ -185,7 +149,7 @@ export class AppComponent implements OnInit {
                             this.uploadPercent = 0;
                             this.userForm.reset();
                             this.url = "";
-                            this.toastr.success('Usuario Guardado');
+                            this.toastr.success(`Usuario: ${param.nombre}, ${param.apellido} Guardado`);
                         })
                             .catch()
                     })
@@ -223,6 +187,10 @@ export class AppComponent implements OnInit {
             this.toastr.success('Foto cargada correctamente');
             this.url = reader.result;
         }
+    }
+
+    reset() {
+        this.url = "";
     }
 
 }

@@ -27,7 +27,15 @@
 #userImage {
     height: 100px;
     width: 150px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
+
+/*#userImage:hover{
+    height: 101px;
+    width: 151px;
+    transition: 0.8s;
+}*/
 
 input, button {
     margin: 20px;
@@ -79,4 +87,8 @@ footer > div  {
 
 .linkFooter  {
     color:black;
+}
+
+.spanName {
+    text-transform: uppercase;
 }
