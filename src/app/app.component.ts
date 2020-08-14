@@ -80,9 +80,11 @@ export class AppComponent implements OnInit {
             firstName: users.nombre,
             lastName: users.apellido,
             access: users.access,
-            imagePre2: {
-                src: users.image
-            }
+            /*imagePost: {
+                src: {
+                    url: users.image
+                }
+            }*/
         });
     }
 
