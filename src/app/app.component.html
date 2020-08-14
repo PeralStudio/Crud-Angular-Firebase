@@ -24,7 +24,7 @@
                 [style.width]="(uploadPercent) + '%'"></div>
         </div>
         <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary ">
-            Guardar
+            {{ mode == 'add' ? 'Agregar' : 'Editar' }}
         </button>
         <button type="reset" class="btn btn-primary" (click)="reset()">Reset</button>
     </form>
