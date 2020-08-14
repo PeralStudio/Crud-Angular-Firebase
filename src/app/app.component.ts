@@ -56,16 +56,21 @@ export class AppComponent implements OnInit {
         this.loadUsers();
     }
 
+    //FUNCION ELIMINAR (USUARIO Database, IMAGEN Storage)
+
     delete(users) {
-        //elimna archivo de firebase
+        //delete archivo Storage
+        console.log('delete',users.filename)
         this.storage.ref(users.filename).delete();
-        //delete document
+        //delete document Database
         this.db.doc(`/users/${users.id}`).delete().then(e => {
             this.toastr.error(`Usuario: ${users.nombre}, ${users.apellido} Eliminado`);
             this.loadUsers();
         })
 
     }
+
+    //FUNCION EDITAR
 
     edit(users) {
         window.scrollTo({
@@ -88,14 +93,15 @@ export class AppComponent implements OnInit {
         });
     }
 
+    //CAPTURAR RUTA IMAGEN
+    
     onUpload(e) {
-        // const id = Math.random().toString(36).substring(2);
         const data = e.target.files[0];
         this.file = data
-        console.log('aa', data.name)
+        console.log(data.name)
         const extension = data.name.split('.')[1].toLowerCase()
         this.id = `uploads/${uuidv4()}.${extension}`
-        console.log(this.id)
+        console.log('RUTA IMAGEN',this.id)
     }
 
     private createForm(): FormGroup {
