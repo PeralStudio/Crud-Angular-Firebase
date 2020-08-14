@@ -2,8 +2,6 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 // Firebase
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
-import { finalize } from 'rxjs/operators';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs/internal/observable';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -138,15 +136,11 @@ export class AppComponent implements OnInit {
     }
 
     sendCloudStorage(nombreArchivo: string, image: any) {
-        // comenzemos por aqui.
-        // necesitamos usar el flag aqui. para que si se edita la imagen no se suba otra sino que actualize la que ya se subio.
-        // eso es practicamente lo mismo que se hace con la data.
-        // segun el flag agregas o actualizas
+
         if (this.mode == 'add') {
             return this.storage.upload(nombreArchivo, image)
         }
         else {
-            // este el el metodo de actualizar en firebase.ok, aqui me he perdido un poco mas pero ya estudiare esta parte ;)
             return this.storage.ref(nombreArchivo).put(image)
         }
     }
@@ -157,7 +151,6 @@ export class AppComponent implements OnInit {
             const auxUser = this.userForm.value as User;
             //obtengo dato del usuario
             //referencia del archivo
-
             const identificador = this.mode == 'add' ? this.id : this.antiguoFilename
 
             if (this.file) {

@@ -23,10 +23,10 @@
             <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
                 [style.width]="(uploadPercent) + '%'"></div>
         </div>
-        <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary ">
+        <button type="submit" [disabled]="!userForm.valid" class="{{ mode == 'add' ? 'btn btn-primary' : 'btn btn-success'  }}">
             {{ mode == 'add' ? 'Agregar' : 'Editar' }}
         </button>
-        <button type="reset" class="btn btn-primary" (click)="reset()">Reset</button>
+        <button type="reset" style.display = "{{ mode == 'add' ? 'none' : 'inline-block'  }}" class="btn btn-danger" (click)="reset()">Cancelar</button>
     </form>
 
     <div class=" cajas row">
