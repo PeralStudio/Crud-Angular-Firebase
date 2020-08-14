@@ -1,13 +1,27 @@
+.navbar {
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    color: #F8F5E6;;
+    background-color: rgb(55, 92, 92);
+}
+
 .form {
     background-color: darkslategray;
     padding: 50px;
     text-align: center;
     color: white;
     word-break: break-all;
+    display: table;
+    margin:0px auto;
+    
 }
-
+.navform {
+    margin-bottom: 100px;
+    background-color: darkslategray;
+    text-align:center;
+}
 .cajas {
-    margin-top: 50px;
     margin-left: 0px;
     text-align: center;
     width: 100%;
@@ -15,9 +29,9 @@
 }
 
 .caja1, .caja2 {
-    background-color: white;
     display: table-column-group;
     color: black;
+    background-color: #f8f5e7af;
 }
 
 #userImage {
@@ -90,4 +104,6 @@ footer > div  {
 
 .spanName {
     text-transform: uppercase;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
 }
