@@ -34,19 +34,6 @@
     background-color: #f8f5e7af;
 }
 
-#userImage {
-    height: 110px;
-    width: 150px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-/*#userImage:hover{
-    height: 101px;
-    width: 151px;
-    transition: 0.8s;
-}*/
-
 input, button {
     margin: 20px;
 }
@@ -78,9 +65,8 @@ h3 {
 }
 
 #imgPreview {
-    width: 150px;
+    width: 200px;
     max-height: 200px;
-    border: solid grey 1px;
 }
 
 footer {
@@ -106,4 +92,47 @@ footer > div  {
     text-transform: uppercase;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
+}
+
+ input[type="file"]#enterFile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    }
+
+.labelEnterfile > img {
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.labelEnterfile > img {
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.labelEnterfile > img:hover {
+    -webkit-transform: scale(1.06);
+	transform: scale(1.06);
+}
+
+#userImage {
+    height: 110px;
+    width: 150px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+#userImage:hover {
+    -webkit-transform: scale(1.06);
+	transform: scale(1.06);
 }

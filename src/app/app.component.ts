@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
     myform: any;
 
     // variable para guardar la url vieja de la foto temporalmente
-    antiguoFilename: string
-    userID: string
+    antiguoFilename: string;
+    userID: string;
 
 
     constructor(
@@ -50,6 +50,7 @@ export class AppComponent implements OnInit {
     userList1: User[] = []
     useList2: User[] = []
     mode: 'add' | 'edit' = 'add'
+    dd: any
 
 
     @ViewChild('imageUser') inputImageUser: ElementRef;
@@ -270,7 +271,6 @@ export class AppComponent implements OnInit {
         this.antiguoFilename = ""
         this.file = null;
         this.mode = 'add';
-        this.url = "";
     }
 
 }
