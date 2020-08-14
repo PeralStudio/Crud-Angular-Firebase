@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
             behavior: 'smooth'
         });
         this.toastr.error(`Editando Usuario: ${users.nombre}, ${users.apellido}`);
-        console.log(users.nombre)
+        console.log(users.nombre, users.apellido)
         console.log(users.image)
         this.userForm.patchValue({
             firstName: users.nombre,
