@@ -26,6 +26,7 @@
         <button type="submit" [disabled]="!userForm.valid" class="{{ mode == 'add' ? 'btn btn-primary' : 'btn btn-success'  }}">
             {{ mode == 'add' ? 'Agregar' : 'Editar' }}
         </button>
+        <button type="reset" class="btn btn-primary" style.display = "{{ mode == 'add' ? 'inline-block' : 'none'  }}" (click)="reset()">Limpiar</button>
         <button type="reset" style.display = "{{ mode == 'add' ? 'none' : 'inline-block'  }}" class="btn btn-danger" (click)="reset()">Cancelar</button>
     </form>
 
