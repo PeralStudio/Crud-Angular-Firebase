@@ -100,7 +100,7 @@ export class AppComponent implements OnInit {
         this.mode = 'edit'
 
         window.scrollTo({
-            top: 0,
+            top: 80,
             left: 0,
             behavior: 'smooth'
         });
