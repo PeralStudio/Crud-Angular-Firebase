@@ -56,10 +56,10 @@
             <img id="userImage" src="{{user.image}}" (click)="edit(user)" title="Click para Editar" /><br>
             <span class="spanName">{{user.nombre}},</span><br>
             <span class="spanName">{{user.apellido}}</span><br>
-            <button type="submit" class="btn btn-outline-danger" (click)="delete(user)">
+            <button type="submit" class="de btn btn-outline-danger" (click)="delete(user)">
                 Borrar
             </button>
-            <button type="submit" class="btn btn-outline-success" (click)="edit(user)">
+            <button type="submit" class="de btn btn-outline-success" (click)="edit(user)">
                 Editar
             </button>
             <hr>
@@ -67,17 +67,17 @@
     </div>
 
     <div class="caja2 col md5">
-        <h3>Sin acceso</h3>
+        <h3 class="sinacceso">Sin acceso</h3>
         <div *ngFor="let user of userListAccess('no')">
             <img id="userImage" src="{{user.image}}" (click)="edit(user)" data-toggle="tooltip" data-placement="top"
                 title="Click para Editar" /><br>
             <span class="spanName">{{user.nombre}},</span><br>
             <span class="spanName">{{user.apellido}}</span><br>
             <div>
-                <button type="submit" class="btn btn-outline-danger" (click)="delete(user)">
+                <button type="submit" class="de btn btn-outline-danger" (click)="delete(user)">
                     Borrar
                 </button>
-                <button type="submit" class="btn btn-outline-success" (click)="edit(user)">
+                <button type="submit" class="de btn btn-outline-success" (click)="edit(user)">
                     Editar
                 </button>
             </div>

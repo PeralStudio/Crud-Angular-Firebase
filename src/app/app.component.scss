@@ -6,6 +6,36 @@
     background-color: rgb(55, 92, 92);
 }
 
+@media all and (max-width:360px){
+    h1 {
+        font-size: 30px;
+    }
+    
+ }
+
+ @media all and (max-width:396px){
+    .cajas {
+        display: grid;
+        color: black;
+        background-color: #f8f5e7af;
+    }
+
+    .sinacceso {
+        margin-top: 40px;
+    }
+
+    .navform {
+        margin: 0px;
+    }
+    
+}
+
+@media all and (max-width:490px){
+    .de {
+        margin: 6px;
+    }
+}
+
 .form {
     background-color: darkslategray;
     padding: 50px;
