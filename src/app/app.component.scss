@@ -140,14 +140,17 @@ footer > div  {
 }
 
 //MEDIA QUERY'S
-@media all and (max-width:360px){
+@media all and (max-width:363px){
     h1 {
         font-size: 30px;
     }
     
+    .de {
+        margin: 1px;
+    }
  }
 
- @media all and (max-width:396px){
+ @media all and (max-width:355px){
     .cajas {
         display: grid;
         color: black;
@@ -161,11 +164,18 @@ footer > div  {
     .navform {
         margin: 0px;
     }
-    
 }
 
 @media all and (max-width:490px){
     .de {
-        margin: 6px;
+        margin: 4px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .navform {
+        margin-bottom: 50px;
     }
 }
