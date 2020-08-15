@@ -1,13 +1,12 @@
 <div class="navbar">
     <h1>Coding Challenge</h1>
 </div>
-
 <div class="navform">
     <form class="form" [formGroup]="userForm" (ngSubmit)="addNewUser()" #form="ngForm">
 
         <div class="image-upload" style="text-align:center">
             <div [innerHtml]='msg' *ngIf="msg"></div>
-            <div><img id="imgPreview" [src]="url" *ngIf="url">
+            <div><img class="rounded" id="imgPreview" [src]="url" *ngIf="url">
             </div>
             <p>
                 <input id="enterFile" type="file" formControlName="imagePost" (change)="selectFile($event)"
@@ -53,15 +52,18 @@
     <div class="caja1 col md5">
         <h3>Con acceso</h3>
         <div *ngFor="let user of userListAccess('yes')">
-            <img id="userImage" src="{{user.image}}" (click)="edit(user)" title="Click para Editar" /><br>
+            <img class="rounded" id="userImage" src="{{user.image}}" (click)="edit(user)"
+                title="Click para Editar" /><br>
             <span class="spanName">{{user.nombre}},</span><br>
             <span class="spanName">{{user.apellido}}</span><br>
-            <button type="submit" class="de btn btn-outline-danger" (click)="delete(user)">
-                Borrar
-            </button>
-            <button type="submit" class="de btn btn-outline-success" (click)="edit(user)">
-                Editar
-            </button>
+            <div class="buttonsGroup">
+                <button type="submit" class="de btn btn-outline-danger" (click)="delete(user)">
+                    Borrar
+                </button>
+                <button type="submit" class="de btn btn-outline-success" (click)="edit(user)">
+                    Editar
+                </button>
+            </div>
             <hr>
         </div>
     </div>
@@ -69,11 +71,11 @@
     <div class="caja2 col md5">
         <h3 class="sinacceso">Sin acceso</h3>
         <div *ngFor="let user of userListAccess('no')">
-            <img id="userImage" src="{{user.image}}" (click)="edit(user)" data-toggle="tooltip" data-placement="top"
-                title="Click para Editar" /><br>
+            <img class="rounded" id="userImage" src="{{user.image}}" (click)="edit(user)" data-toggle="tooltip"
+                data-placement="top" title="Click para Editar" /><br>
             <span class="spanName">{{user.nombre}},</span><br>
             <span class="spanName">{{user.apellido}}</span><br>
-            <div>
+            <div class="buttonsGroup">
                 <button type="submit" class="de btn btn-outline-danger" (click)="delete(user)">
                     Borrar
                 </button>

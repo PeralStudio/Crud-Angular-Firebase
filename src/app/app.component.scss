@@ -144,10 +144,6 @@ footer > div  {
     h1 {
         font-size: 30px;
     }
-    
-    .de {
-        margin: 1px;
-    }
  }
 
  @media all and (max-width:355px){
@@ -177,5 +173,9 @@ footer > div  {
 
     .navform {
         margin-bottom: 50px;
+    }
+
+    .spanName {
+        font-size: 14px;
     }
 }

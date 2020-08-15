@@ -10,6 +10,10 @@ import { firestore } from "firebase/app";
 import { User } from './models/user';
 import { v4 as uuidv4 } from 'uuid';
 
+//Sweet alert
+import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
+
 
 
 @Component({
@@ -65,22 +69,36 @@ export class AppComponent implements OnInit {
     //FUNCION ELIMINAR (USUARIO Database, IMAGEN Storage)
 
     delete(users) {
-        //delete archivo Storage
-        console.log('delete', users.filename)
-        this.storage.ref(users.filename).delete();
-        //delete document Database
-        this.db.doc(`/users/${users.id}`).delete().then(e => {
-            this.toastr.error(`${users.nombre}, ${users.apellido} `, "Usuario Eliminado:");
-            
-        })
+        Swal.fire({
+            title: '¿Estas seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Borrar!'
+        }).then((result) => {
+            if (result.value) {
 
+                console.log('delete', users.filename)
+                this.storage.ref(users.filename).delete();
+                //delete document Database
+                this.db.doc(`/users/${users.id}`).delete().then(e => {
+                    this.toastr.error(`${users.nombre}, ${users.apellido} `, "Usuario Eliminado:");
+                });
+            } else if (
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                this.toastr.error(`${users.nombre}, ${users.apellido} `, "Eliminación Cancelada:")
+            }
+        })
     }
 
     //FUNCION EDITAR
 
     edit(users) {
         this.mode = 'edit'
-        // ahora vas al html 
+
         window.scrollTo({
             top: 0,
             left: 0,
