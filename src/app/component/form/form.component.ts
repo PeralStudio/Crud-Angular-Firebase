@@ -174,7 +174,6 @@ export class FormComponent implements OnInit, OnChanges {
     //     access: auxUser.access,
     // }
 
-    //envio el objeto a firebase
     let result: Promise<any>
 
     result = this.dbService.addUser(this.mode, param, docID)
