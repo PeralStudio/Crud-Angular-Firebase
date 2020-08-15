@@ -6,36 +6,6 @@
     background-color: rgb(55, 92, 92);
 }
 
-@media all and (max-width:360px){
-    h1 {
-        font-size: 30px;
-    }
-    
- }
-
- @media all and (max-width:396px){
-    .cajas {
-        display: grid;
-        color: black;
-        background-color: #f8f5e7af;
-    }
-
-    .sinacceso {
-        margin-top: 40px;
-    }
-
-    .navform {
-        margin: 0px;
-    }
-    
-}
-
-@media all and (max-width:490px){
-    .de {
-        margin: 6px;
-    }
-}
-
 .form {
     background-color: darkslategray;
     padding: 50px;
@@ -46,11 +16,13 @@
     margin:0px auto;
     
 }
+
 .navform {
     margin-bottom: 100px;
     background-color: darkslategray;
     text-align:center;
 }
+
 .cajas {
     margin-left: 0px;
     text-align: center;
@@ -131,7 +103,7 @@ footer > div  {
     overflow: hidden;
     position: absolute;
     z-index: -1;
-    }
+}
 
 .labelEnterfile > img {
     height: 80px;
@@ -165,4 +137,35 @@ footer > div  {
 #userImage:hover {
     -webkit-transform: scale(1.06);
 	transform: scale(1.06);
+}
+
+//MEDIA QUERY'S
+@media all and (max-width:360px){
+    h1 {
+        font-size: 30px;
+    }
+    
+ }
+
+ @media all and (max-width:396px){
+    .cajas {
+        display: grid;
+        color: black;
+        background-color: #f8f5e7af;
+    }
+
+    .sinacceso {
+        margin-top: 40px;
+    }
+
+    .navform {
+        margin: 0px;
+    }
+    
+}
+
+@media all and (max-width:490px){
+    .de {
+        margin: 6px;
+    }
 }
