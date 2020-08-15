@@ -76,6 +76,7 @@ export class AppComponent implements OnInit {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
+            cancelButtonText: "Cancelar",
             confirmButtonText: 'Si, Borrar!'
         }).then((result) => {
             if (result.value) {
