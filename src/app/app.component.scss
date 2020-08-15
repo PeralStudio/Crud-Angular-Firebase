@@ -19,7 +19,7 @@
 }
 
 .navform {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     background-color: #15242D;
     text-align:center;
 }
@@ -53,8 +53,10 @@ input, button {
 h3 {
     text-transform: uppercase;
     margin-bottom: 40px;
-    color: #15242D;
-    border-bottom: solid #15242D 1px;
+    color: #E9E9EA;
+    border: solid #15242D 1px;
+    border-radius: 8px;
+    background-color: #15242D;
 }
 
 #select {
