@@ -17,7 +17,7 @@ export class AppComponent {
     }
 
     onEdit(user: User) {
-        console.log('se precioono el boton de editar', user)
+        console.log('se presiono el boton de editar', user)
         this.userToEdit = user;
     }
 
