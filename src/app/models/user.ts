@@ -1,7 +1,8 @@
 export interface User {
     id: string;
-    lastName: string;
-    firstName: string;
+    apellido: string;
+    nombre: string;
+    filename : string;
     image: string;
     access: 'yes' | 'no';
 }

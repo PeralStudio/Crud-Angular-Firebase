@@ -1,0 +1,45 @@
+<div class="navform">
+    <form class="form" [formGroup]="userForm" (ngSubmit)="addNewUser()" #form="ngForm">
+
+        <div class="image-upload" style="text-align:center">
+            <div [innerHtml]='msg' *ngIf="msg"></div>
+
+            <p>
+                <input id="enterFile" type="file" formControlName="imagePost" (change)="selectFile($event)"
+                    (change)=onUpload($event)>
+            </p>
+            <div class="label">
+                <label class="labelEnterfile" for="enterFile">
+                    <img [src]="url ? url :  '../assets/images/avatarImage.png'" alt="uploadImage" title="Subir Imágen">
+                </label>
+            </div>
+        </div>
+        <div class="divImputNombres">
+            Nombre: <input class="firstName" type="text" formControlName="firstName" placeholder="Nombre"
+                name="nombre"><br>
+            Apellidos:<input class="lastName" type="text" formControlName="lastName" placeholder="Apellidos">
+            <br>
+        </div>
+        <div class="DivSelect">
+            <select id="select" formControlName="access">
+                <option value="" disabled selected>¿Acceso?</option>
+                <option value="yes">Con acceso</option>
+                <option value="no">Sin Acceso</option>
+            </select>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                [style.width]="(uploadPercent) + '%'"></div>
+        </div>
+        <div class="divButtons">
+            <button type="submit" [disabled]="!userForm.valid"
+                class="{{ mode == 'add' ? 'btn btn-primary' : 'btn btn-success'  }}">
+                {{ mode == 'add' ? 'Agregar' : 'Editar' }}
+            </button>
+            <button type="reset" class="btn btn-primary" style.display="{{ mode == 'add' ? 'inline-block' : 'none'  }}"
+                (click)="reset()">Limpiar</button>
+            <button type="reset" style.display="{{ mode == 'add' ? 'none' : 'inline-block'  }}" class="btn btn-danger"
+                (click)="reset()">Cancelar</button>
+        </div>
+    </form>
+</div>
