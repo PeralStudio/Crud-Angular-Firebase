@@ -2,26 +2,24 @@
     justify-content: center;
     height: 80px;
     width: 100%;
-    color: #F8F5E6;;
+    color: #f8f5e6;
     background-color: #1d2f3a;
-    
 }
 
 .form {
-    background-color: #15242D;
+    background-color: #15242d;
     padding: 50px;
     text-align: center;
     color: white;
     word-break: break-all;
     display: table;
-    margin:0px auto;
-    
+    margin: 0px auto;
 }
 
 .navform {
     margin-bottom: 60px;
-    background-color: #15242D;
-    text-align:center;
+    background-color: #15242d;
+    text-align: center;
 }
 
 .cajas {
@@ -31,17 +29,20 @@
     min-height: calc(100vh - 60px - 426px - 50px);
 }
 
-.caja1, .caja2 {
+.caja1,
+.caja2 {
     display: table-column-group;
     color: black;
     background-color: #e9e9e9;
 }
 
-input, button {
+input,
+button {
     margin: 20px;
 }
 
-.firstName, .lastName {
+.firstName,
+.lastName {
     margin: 10px;
 }
 
@@ -53,10 +54,10 @@ input, button {
 h3 {
     text-transform: uppercase;
     margin-bottom: 40px;
-    color: #E9E9EA;
-    border: solid #15242D 1px;
+    color: #e9e9ea;
+    border: solid #15242d 1px;
     border-radius: 8px;
-    background-color: #15242D;
+    background-color: #15242d;
 }
 
 #select {
@@ -72,7 +73,7 @@ h3 {
 #imgPreview {
     width: 200px;
     max-height: 200px;
-    border: solid #E9E9EA 1px;
+    border: solid #e9e9ea 1px;
 }
 
 footer {
@@ -80,18 +81,18 @@ footer {
     display: flex;
     justify-content: center;
     color: white;
-    background-color: #15242D;
+    background-color: #15242d;
 }
 
-footer > div  {
+footer > div {
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
 }
 
-.linkFooter  {
-    color:black;
+.linkFooter {
+    color: black;
 }
 
 .spanName {
@@ -100,7 +101,7 @@ footer > div  {
     font-weight: bold;
 }
 
- input[type="file"]#enterFile {
+input[type="file"]#enterFile {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -117,14 +118,14 @@ footer > div  {
 
 .labelEnterfile > img {
     -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .labelEnterfile > img:hover {
     -webkit-transform: scale(1.06);
-	transform: scale(1.06);
+    transform: scale(1.06);
 }
 
 #userImage {
@@ -132,26 +133,26 @@ footer > div  {
     width: 150px;
     margin-bottom: 10px;
     cursor: pointer;
-    border: solid #15242D 2px;
+    border: solid #15242d 2px;
     -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 #userImage:hover {
-    -webkit-transform: scale(1.10);
-	transform: scale(1.10);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 //MEDIA QUERY'S
-@media all and (max-width:363px){
+@media all and (max-width: 363px) {
     h1 {
         font-size: 30px;
     }
- }
+}
 
- @media all and (max-width:355px){
+@media all and (max-width: 355px) {
     .cajas {
         display: grid;
         color: black;
@@ -167,7 +168,7 @@ footer > div  {
     }
 }
 
-@media all and (max-width:490px){
+@media all and (max-width: 490px) {
     .de {
         margin: 4px;
     }
