@@ -10,7 +10,7 @@ footer {
     height: 60px;
     display: flex;
     justify-content: center;
-    color: white;
+    color: #e9e9ea;
     background-color: #15242d;
 }
 
@@ -25,8 +25,8 @@ footer > div {
     color: black;
 }
 
-@media all and (max-width: 355px) {
+@media all and (max-width: 359px) {
     h1 {
-        font-size: 24px;
+        font-size: 36px;
     }
 }
