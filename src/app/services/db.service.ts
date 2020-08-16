@@ -32,7 +32,7 @@ export class DbService {
     return this.db.doc(`/users/${user.id}`).delete().then(e => {
       Swal.fire(
           'Eliminado!',
-          `Usuario Eliminado: ${user.nombre}, ${user.apellido}`,
+          `Usuario Eliminado: ${user.nombre}, ${user.apellido}.`,
           'success')
       this.deleteFile(user.filename).subscribe(() => {
         console.log('archivo eliminado')

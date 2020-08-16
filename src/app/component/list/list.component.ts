@@ -50,7 +50,7 @@ export class ListComponent implements OnInit {
   delete(users) {
     Swal.fire({
       title: '¿Estas seguro?',
-      text: "¡No podrás revertir esto!",
+      text: `Vas a borrar a ${users.nombre}, ${users.apellido}.`,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
