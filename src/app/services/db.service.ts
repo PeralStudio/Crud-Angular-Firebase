@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
 import { AngularFireStorage } from '@angular/fire/storage';
 import { User } from '../models/user';
 import { firestore } from 'firebase';
@@ -28,7 +30,10 @@ export class DbService {
   deleteUser(user: User) {
     //delete document Database
     return this.db.doc(`/users/${user.id}`).delete().then(e => {
-      this.toastr.error(`${user.nombre}, ${user.apellido} `, "Usuario Eliminado:");
+      Swal.fire(
+          'Eliminado!',
+          `Usuario Eliminado: ${user.nombre}, ${user.apellido}`,
+          'success')
       this.deleteFile(user.filename).subscribe(() => {
         console.log('archivo eliminado')
       })
