@@ -24,3 +24,9 @@ footer > div {
 .linkFooter {
     color: black;
 }
+
+@media all and (max-width: 355px) {
+    h1 {
+        font-size: 24px;
+    }
+}
