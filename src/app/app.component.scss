@@ -1,8 +1,12 @@
+//Variables
+$base-color: #15242d;
+$secundary-color: #e9e9e9;
+
 .navbar {
     justify-content: center;
     height: 80px;
     width: 100%;
-    color: #f8f5e6;
+    color: $secundary-color;
     background-color: #1d2f3a;
 }
 
@@ -10,8 +14,8 @@ footer {
     height: 60px;
     display: flex;
     justify-content: center;
-    color: #e9e9ea;
-    background-color: #15242d;
+    color: $secundary-color;
+    background-color: $base-color;
 }
 
 footer > div {

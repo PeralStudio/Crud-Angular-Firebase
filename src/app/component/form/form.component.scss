@@ -1,8 +1,12 @@
+//Variables
+$base-color: #15242d;
+$secundary-color: #e9e9e9;
+
 .form {
-    background-color: #15242d;
+    background-color: $base-color;
     padding: 50px;
     text-align: center;
-    color: white;
+    color: $secundary-color;
     word-break: break-all;
     display: table;
     margin: 0px auto;
@@ -10,7 +14,7 @@
 
 .navform {
     margin-bottom: 60px;
-    background-color: #15242d;
+    background-color: $base-color;
     text-align: center;
 }
 
@@ -43,7 +47,7 @@ button {
 #imgPreview {
     width: 200px;
     max-height: 200px;
-    border: solid #e9e9ea 1px;
+    border: solid $secundary-color 1px;
 }
 
 input[type="file"]#enterFile {
@@ -59,7 +63,7 @@ input[type="file"]#enterFile {
     width: 200px;
     max-height: 200px;
     margin-bottom: 20px;
-    border: solid #e9e9ea 1px;
+    border: solid $secundary-color 1px;
     border-radius: 1px;
     cursor: pointer;
 }
