@@ -39,7 +39,7 @@ export class FormComponent implements OnInit, OnChanges {
       this.mode = 'edit'
 
       window.scrollTo({
-        top: 80,
+        top: 0,
         left: 0,
         behavior: 'smooth'
       });
