@@ -24,6 +24,7 @@
               "lodash/dropRight",
               "@firebase/app",
               "firebase/app",
+              "@firebase/util",
               "@firebase/auth",
               "@firebase/component",
               "@firebase/database",
