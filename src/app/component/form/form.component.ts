@@ -187,7 +187,7 @@ export class FormComponent implements OnInit, OnChanges {
   }
 
   reset() {
-    this.uploadPercent = 0;
+    this.uploadPercent = this.porcentaje = 0;
     this.userForm?.reset();
     this.url = "";
     this.userID = ""

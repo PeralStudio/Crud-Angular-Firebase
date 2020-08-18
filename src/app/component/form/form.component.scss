@@ -3,7 +3,7 @@
 
 .form {
     background-color: $base-color;
-    padding: 50px;
+    padding: 30px 50px 50px 50px;
     text-align: center;
     color: $secundary-color;
     word-break: break-all;
@@ -21,8 +21,12 @@ input {
     margin: 20px;
 }
 
+.divImputNombres {
+    padding: 10px;
+}
+
 button {
-    margin: 10px;
+    margin: 20px;
     border-radius: 50px;
     width: 100px;
 }
@@ -63,16 +67,17 @@ input[type="file"]#enterFile {
     z-index: -1;
 }
 
-.labelEnterfile > img {
-    width: 200px;
-    max-height: 200px;
-    margin-bottom: 20px;
-    border: solid $secundary-color 1px;
-    border-radius: 1px;
-    cursor: pointer;
+.label {
+    display: flex;
 }
 
 .labelEnterfile > img {
+    width: 200px;
+    height: 180px;
+    margin-bottom: 20px;
+    border: solid $secundary-color 1px;
+    border-radius: 4px;
+    cursor: pointer;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: 0.3s ease-in-out;
@@ -89,6 +94,16 @@ input[type="file"]#enterFile {
     h1 {
         font-size: 30px;
     }
+
+    .divButtons {
+        padding-top: 20px;
+    }
+
+    button {
+        margin: 10px;
+        border-radius: 50px;
+        width: 100px;
+    }
 }
 
 @media all and (max-width: 355px) {
@@ -97,8 +112,12 @@ input[type="file"]#enterFile {
     }
 }
 
-@media all and (max-width: 490px) {
+@media all and (max-width: 522px) {
     .navform {
         margin-bottom: 50px;
+    }
+
+    .label {
+        display: block;
     }
 }

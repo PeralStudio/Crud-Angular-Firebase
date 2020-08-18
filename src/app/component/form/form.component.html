@@ -12,24 +12,20 @@
                 <label class="labelEnterfile" for="enterFile">
                     <img [src]="url ? url :  '../assets/images/avatarImage.png'" alt="avatarImage" title="Subir Imágen">
                 </label>
+                <div class="divImputNombres">
+                    <input class="firstName" type="text" formControlName="firstName" placeholder="Nombre" name="nombre"><br>
+                    <input class="lastName" type="text" formControlName="lastName" placeholder="Apellidos">
+                    <br>
+                    <select id="select" formControlName="access">
+                        <option value="" disabled selected>¿Acceso?</option>
+                        <option value="yes">Con acceso</option>
+                        <option value="no">Sin Acceso</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="divImputNombres">
-            <input class="firstName" type="text" formControlName="firstName" placeholder="Nombre" name="nombre"><br>
-            <input class="lastName" type="text" formControlName="lastName" placeholder="Apellidos">
-            <br>
-        </div>
-        <div class="DivSelect">
-            <select id="select" formControlName="access">
-                <option value="" disabled selected>¿Acceso?</option>
-                <option value="yes">Con acceso</option>
-                <option value="no">Sin Acceso</option>
-            </select>
-        </div>
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-                [style.width]="(uploadPercent) + '%'"></div>
-        </div>
+        
+        
         <div class="divButtons">
             <button type="submit" [disabled]="!userForm.valid"
                 class="{{ mode == 'add' ? 'btn btn-primary' : 'btn btn-success'  }}">
@@ -39,6 +35,10 @@
                 (click)="reset()">Limpiar</button>
             <button type="reset" style.display="{{ mode == 'add' ? 'none' : 'inline-block'  }}" class="btn btn-danger"
                 (click)="reset()">Cancelar</button>
+        </div>
+        <div [hidden]="uploadPercent == 0" class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                [style.width]="(uploadPercent) + '%'"></div>
         </div>
     </form>
 </div>
