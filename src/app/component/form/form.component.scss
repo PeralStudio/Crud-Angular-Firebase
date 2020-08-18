@@ -17,9 +17,14 @@
     text-align: center;
 }
 
-input,
+input {
+    margin: 20px;
+}
+
 button {
     margin: 20px;
+    border-radius: 50px;
+    width: 100px;
 }
 
 .firstName,
