@@ -4,6 +4,7 @@ import { DbService } from 'src/app/services/db.service';
 import { User } from 'src/app/models/user';
 import { v4 as uuidv4 } from 'uuid';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-form',
@@ -84,23 +85,22 @@ export class FormComponent implements OnInit, OnChanges {
       if (this.file) {
         let ref = this.dbService.cloudStorage(identificador)
         let task = this.dbService.sendCloudStorage(identificador, this.file, this.mode)
-        task.percentageChanges().subscribe(porcentaje => {
-          this.porcentaje = Math.round(porcentaje)
-          this.uploadPercent = this.porcentaje
-          if (this.porcentaje == 100) {
-            console.log("finalizado")
-            //esperar a que este finalizado para obtener el url
-            ref.getDownloadURL().subscribe(async (url) => {
-              this.editData(auxUser, url, identificador)
-            })
-          }
-        })
-      }
-      else {
-        this.editData(auxUser, null, identificador)
-      }
+        task.percentageChanges().pipe(
+          finalize(() => {
+              console.log('finalizado');
+              //esperar a que este finalizado para obtener el url
+              ref.getDownloadURL().subscribe(async (url) => {
+                  this.editData(auxUser, url, identificador);
+              });
+          })
+      )
+      .subscribe((porcentaje) => {
+          this.porcentaje = Math.round(porcentaje);
+          this.uploadPercent = this.porcentaje;
+      });
     }
   }
+}
 
   selectFile(event) {
     if (!event.target.files[0] || event.target.files[0].length == 0) {
