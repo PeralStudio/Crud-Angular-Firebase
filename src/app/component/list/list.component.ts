@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
 
   userList: User[] = [];
   userToEdit: User //user a editar 
-  // loaded = false
+  loaded = false
 
   @Output() onEdit = new EventEmitter()
 
@@ -30,10 +30,11 @@ export class ListComponent implements OnInit {
   }
 
   loadUsers() {
-    // this.loaded = true
+    this.loaded = false
     this.dbService.getUsers()
       .subscribe((result) => {
         this.userList = result;
+        this.loaded = true
         console.log(result)
       })
   }
