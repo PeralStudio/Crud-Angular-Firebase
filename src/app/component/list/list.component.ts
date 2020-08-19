@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../../models/user';
 import { DbService } from 'src/app/services/db.service';
 
-//Sweet alert
+//Sweet alert / Toastr
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 import { ToastrService } from 'ngx-toastr';
@@ -17,6 +17,7 @@ export class ListComponent implements OnInit {
 
   userList: User[] = [];
   userToEdit: User //user a editar 
+  loaded = false
 
   @Output() onEdit = new EventEmitter()
 
@@ -29,6 +30,7 @@ export class ListComponent implements OnInit {
   }
 
   loadUsers() {
+    this.loaded = true
     this.dbService.getUsers()
       .subscribe((result) => {
         this.userList = result;

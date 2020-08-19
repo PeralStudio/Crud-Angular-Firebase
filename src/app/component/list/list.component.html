@@ -1,6 +1,7 @@
 <div class=" cajas row">
     <div class="caja1 col md5">
         <h3>Con acceso</h3>
+        <div *ngIf="userListAccess('no').length > 0; else noElements">
         <div *ngFor="let user of userListAccess('yes')">
             <img class="rounded" id="userImage" src="{{user.image}}" (click)="edit(user)"
                 title="Click para Editar" /><br>
@@ -17,23 +18,34 @@
             <hr>
         </div>
     </div>
-
+    </div>
     <div class="caja2 col md5">
         <h3 class="sinacceso">Sin acceso</h3>
-        <div *ngFor="let user of userListAccess('no')">
-            <img class="rounded" id="userImage" src="{{user.image}}" (click)="edit(user)" data-toggle="tooltip"
-                data-placement="top" title="Click para Editar" /><br>
-            <span class="spanName">{{user.nombre}},</span><br>
-            <span class="spanName">{{user.apellido}}</span><br>
-            <div class="buttonsGroup">
-                <button type="submit" class="de btn btn-outline-danger" (click)="delete(user)">
-                    Borrar
-                </button>
-                <button type="submit" class="de btn btn-outline-success" (click)="edit(user)">
-                    Editar
-                </button>
+        <div *ngIf="userListAccess('no').length > 0; else noElements">
+            <div *ngFor="let user of userListAccess('no')">
+                <img class="rounded" id="userImage" src="{{user.image}}" (click)="edit(user)" data-toggle="tooltip"
+                    data-placement="top" title="Click para Editar" /><br>
+                <span class="spanName">{{user.nombre}},</span><br>
+                <span class="spanName">{{user.apellido}}</span><br>
+                <div class="buttonsGroup">
+                    <button type="submit" class="de btn btn-outline-danger" (click)="delete(user)">
+                        Borrar
+                    </button>
+                    <button type="submit" class="de btn btn-outline-success" (click)="edit(user)">
+                        Editar
+                    </button>
+                </div>
+                <hr>
             </div>
-            <hr>
         </div>
     </div>
-</div>
+    <ng-template #noElements>
+        <div *ngIf="!loaded">
+            <div onclick="this.parentElement.style.display='none'" class="alert alert-warning alert-dismissible fade show" role="alert">
+                No hay Usuarios.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+        </div>
+    </ng-template>
