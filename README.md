@@ -11,7 +11,7 @@
 
 You need import Firebase Keys 
 
-```export const environment = {
+export const environment = {
     production: false,
     firebase: {
         apiKey: "XXX",
@@ -22,7 +22,7 @@ You need import Firebase Keys
         messagingSenderId: "XXX",
         appId: "XXX"
     }
-};```
+};
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
