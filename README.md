@@ -8,6 +8,22 @@
 
 ![](https://peralstudio.com/assets/images/crudangular3.png)
 
+
+You need import Firebase Keys 
+
+```export const environment = {
+    production: false,
+    firebase: {
+        apiKey: "XXX",
+        authDomain: "XXX",
+        databaseURL: "XXX",
+        projectId: "XXX",
+        storageBucket: "XXX",
+        messagingSenderId: "XXX",
+        appId: "XXX"
+    }
+};```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
 ## Development server
