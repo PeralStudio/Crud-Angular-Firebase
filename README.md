@@ -1,6 +1,6 @@
 # Crud Completo Firebase + Angular
 
-You need import Firebase Keys 
+you need to import Firebase Keys to environment.ts
 
 ```
 export const environment = {
