@@ -1,5 +1,21 @@
 # Crud Completo Firebase + Angular
 
+you need to import Firebase Keys to environment.ts
+
+```
+export const environment = {
+    production: false,
+    firebase: {
+        apiKey: "XXX",
+        authDomain: "XXX",
+        databaseURL: "XXX",
+        projectId: "XXX",
+        storageBucket: "XXX",
+        messagingSenderId: "XXX",
+        appId: "XXX"
+    }
+};
+```
 ![](https://peralstudio.com/assets/images/crudangular1.png)
 
 
@@ -7,6 +23,7 @@
 
 
 ![](https://peralstudio.com/assets/images/crudangular3.png)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
