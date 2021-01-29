@@ -34,8 +34,8 @@ export class FormComponent implements OnInit, OnChanges {
     this.userForm = this.createForm();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('cambios', this.userToEdit)
+  ngOnChanges(_changes: SimpleChanges) {
+    console.log('usuario a editar', this.userToEdit)
     if (this.userToEdit) {
       this.mode = 'edit'
 
@@ -45,8 +45,8 @@ export class FormComponent implements OnInit, OnChanges {
         behavior: 'smooth'
       });
       this.toastrService.info(`${this.userToEdit.nombre}, ${this.userToEdit.apellido}`, "Editando Usuario:");
-      console.log(this.userToEdit.nombre, this.userToEdit.apellido)
-      console.log(this.userToEdit.image)
+      console.log("1",this.userToEdit.nombre, this.userToEdit.apellido)
+      console.log("2",this.userToEdit.image)
       this.userForm.patchValue({
         firstName: this.userToEdit.nombre,
         lastName: this.userToEdit.apellido,
@@ -99,6 +99,7 @@ export class FormComponent implements OnInit, OnChanges {
           this.uploadPercent = this.porcentaje;
       });
     }
+    else this.editData(auxUser, null, null);
   }
 }
 
@@ -189,6 +190,7 @@ export class FormComponent implements OnInit, OnChanges {
   reset() {
     this.uploadPercent = this.porcentaje = 0;
     this.userForm?.reset();
+    this.userForm?.get("access").patchValue("")
     this.url = "";
     this.userID = ""
     this.antiguoFilename = ""
