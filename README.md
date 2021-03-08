@@ -1,21 +1,6 @@
 # Crud Completo Firebase + Angular
 
-you need to import Firebase Keys to environment.ts
 
-```
-export const environment = {
-    production: false,
-    firebase: {
-        apiKey: "XXX",
-        authDomain: "XXX",
-        databaseURL: "XXX",
-        projectId: "XXX",
-        storageBucket: "XXX",
-        messagingSenderId: "XXX",
-        appId: "XXX"
-    }
-};
-```
 ![](https://peralstudio.com/assets/images/crudangular1.png)
 
 
