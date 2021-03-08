@@ -34,8 +34,7 @@ export class ListComponent implements OnInit {
     this.dbService.getUsers()
       .subscribe((result) => {
         this.userList = result;
-        this.loaded = true
-        console.log(result)
+        this.loaded = true;
       })
   }
 
@@ -62,9 +61,6 @@ export class ListComponent implements OnInit {
       confirmButtonText: 'Si, Borrar!'
     }).then((result) => {
       if (result.value) {
-
-        console.log('delete', users.filename)
-
         //delete document Database
         this.dbService.deleteUser(users).then(e => {
           console.log('ususario eliminado')

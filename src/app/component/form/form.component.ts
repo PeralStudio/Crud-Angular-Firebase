@@ -35,7 +35,6 @@ export class FormComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(_changes: SimpleChanges) {
-    console.log('usuario a editar', this.userToEdit)
     if (this.userToEdit) {
       this.mode = 'edit'
 
@@ -45,8 +44,6 @@ export class FormComponent implements OnInit, OnChanges {
         behavior: 'smooth'
       });
       this.toastrService.info(`${this.userToEdit.nombre}, ${this.userToEdit.apellido}`, "Editando Usuario:");
-      console.log("1",this.userToEdit.nombre, this.userToEdit.apellido)
-      console.log("2",this.userToEdit.image)
       this.userForm.patchValue({
         firstName: this.userToEdit.nombre,
         lastName: this.userToEdit.apellido,
@@ -87,7 +84,6 @@ export class FormComponent implements OnInit, OnChanges {
         let task = this.dbService.sendCloudStorage(identificador, this.file, this.mode)
         task.percentageChanges().pipe(
           finalize(() => {
-              console.log('finalizado');
               //esperar a que este finalizado para obtener el url
               ref.getDownloadURL().subscribe(async (url) => {
                   this.editData(auxUser, url, identificador);
@@ -105,7 +101,6 @@ export class FormComponent implements OnInit, OnChanges {
 
   selectFile(event) {
     if (!event.target.files[0] || event.target.files[0].length == 0) {
-      console.log(event.target.files[0])
 
       this.toastrService.error('Debes seleccionar una imagen');
       this.url = "";
@@ -131,17 +126,14 @@ export class FormComponent implements OnInit, OnChanges {
 
   onUpload(e) {
     const data = e.target.files[0];
-    this.file = data
-    console.log(data.name)
+    this.file = data;
     const extension = data.name.split('.')[1].toLowerCase()
-    this.id = `uploads/${uuidv4()}.${extension}`
-    console.log('RUTA IMAGEN', this.id)
+    this.id = `uploads/${uuidv4()}.${extension}`;
   }
 
   editData(auxUser: any, url: string, identificador: string) {
     const docID = this.mode == 'add' ? uuidv4() : this.userID;
-    let param: any = {}
-    console.log('URL', url)
+    let param: any = {};
     if (url) {
       param = {
         id: docID,
